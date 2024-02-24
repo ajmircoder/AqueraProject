@@ -4,7 +4,13 @@
 
 ## Clone the repository:
 
-- https://github.com/ajmircoder/fyleProject.git
+- https://github.com/ajmircoder/AqueraProject.git
+##
+
+## To start the project:
+
+- npm i
+- npm run dev
 
 ## API Used
 
