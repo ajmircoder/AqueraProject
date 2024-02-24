@@ -2,6 +2,7 @@
     transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1), margin-bottom 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .parent .hidden-child {
+    overflow: hidden;
     opacity: 0;
     height: 0px;
     transition: all 0.7s ;
@@ -10,4 +11,8 @@
   .parent:hover .hidden-child {
     height: 75px;
     opacity: 1;
+  }
+
+  .btn{
+    transition: all .4s;
   }
