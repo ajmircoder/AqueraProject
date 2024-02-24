@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../CSS/planets.css';
 
-export default function Planets() {
+export default function Planets({setWelcome}) {
   const uri = "https://swapi.dev/api/planets/?page=1";
   const [planets, setPlanets] = useState(null);
   const [allResident, setAllResident] = useState({});
@@ -59,21 +59,22 @@ export default function Planets() {
   }, [planets]);
   return (
     <>
-      <div className='my-2'>
-        {!planets ? <p className='w-full text-center text-xl'>Loding...</p> : <div>
-          <p className='text-center font-bold text-3xl mb-1 text-teal-400'>
-            Planets
-          </p>
+      <div className='bg-slate-200 py-2'>
+        {!planets ? <p className='text-center text-xl'>Loding...</p> : <div>
+          <div className='md:w-[90%] xl:w-[70%] mx-auto mb-1'>
+            <p className='font-bold text-center text-3xl text-teal-400'>Planets</p>
+            <button className=' bg-red-400 px-2 py-1 rounded-sm ml-auto block' onClick={()=> setWelcome(true)}>Home</button>
+          </div>
           <div className='border pb-4 border-teal-600 mx-auto md:w-[90%] xl:w-[70%] md:grid md:grid-cols-2 xl:grid-cols-2 text-center'>
             {planets.map((p, index) =>
               <div key={index} className="mx-auto mb-4 md:mb-0 sm:w-[80%] md:mt-8 md:w-[80%] xl:w-[70%] transform overflow-hidden md:rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                 <img className="h-48 w-full object-cover object-center" src={imgUrl[Math.floor(Math.random() * imgUrl.length-1) + 1]} alt="Product Image" />
                 <div className="p-4">
-                  <h2 className=" text-lg font-medium dark:text-white text-gray-900">{p.name}</h2>
-                  <p className=" text-base dark:text-gray-300 text:text-white">{`climate: ${p.climate}`}</p>
+                  <h2 className=" text-lg font-medium dark:text-white text-gray-900">{`Name: ${p.name}`}</h2>
+                  <p className=" text-base dark:text-gray-300 text:text-white">{`Climate: ${p.climate}`}</p>
                   <div className="">
-                    <p className=" text-base dark:text-gray-300 text-gray-700">{`population: ${p.population}`}</p>
-                    <p className="text-base mb-1 font-semibold text-white">{`terrain: ${p.terrain}`}</p>
+                    <p className=" text-base dark:text-gray-300 text-gray-700">{`Population: ${p.population}`}</p>
+                    <p className="text-base mb-1 font-semibold text-white">{`Terrain: ${p.terrain}`}</p>
                   </div>
                   {Object.keys(allResident).length && allResident[p.url] && allResident[p.url].length ? (allResident[p.url].map((res, i) => {
                     return (
@@ -100,13 +101,19 @@ export default function Planets() {
             {pvrApi ? <button className="bg-[#1665b9] active:bg-[#6c9bce] mx-1 btn text-white my-3 
             px-10 py-4 rounded-full 
             block md:hover:pl-8 md:hover:pr-12"
-              onClick={() => getPlanet(pvrApi)}
+              onClick={() => {
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+                getPlanet(pvrApi)
+              }}
             >
               &larr; PREVIOUS</button> : ""}
             {nextApi ? <button className="bg-[#b91647ff] active:bg-[#d57692] btn mx-1 text-white my-3 
             px-10 py-4 rounded-full 
             block md:hover:pr-8 md:hover:pl-12"
-              onClick={() => getPlanet(nextApi)}
+              onClick={() => {
+                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+                getPlanet(nextApi)
+              }}
             >
               NEXT →</button> : ""}
           </div>
