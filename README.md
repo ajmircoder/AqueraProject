@@ -1,8 +1,22 @@
-# React + Vite
+# AqueraProject
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## This is a simple frontend project. Here you can see all the planets.
 
-Currently, two official plugins are available:
+## Clone the repository:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- https://github.com/ajmircoder/fyleProject.git
+
+## API Used
+
+- API_use: https://swapi.dev/api/planets/?format=json
+  
+- ## Technologies Used
+  
+- HTML
+- CSS
+- Javascript
+- Tailwind
+
+## Extra features: Home 
+
+![image](https://github.com/ajmircoder/AqueraProject/assets/127777945/89fc9b19-2700-461f-95ae-26edce573f0f)
