@@ -18,9 +18,8 @@
   
 - ## Technologies Used
   
-- HTML
+- React
 - CSS
-- Javascript
 - Tailwind
 
 ## Extra features: Home 
